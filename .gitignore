@@ -1,3 +1,6 @@
 RAW_recipes.csv
 idToRecipe.txt
 ingToId.txt
+/node_modules
+package.json
+package-lock.json

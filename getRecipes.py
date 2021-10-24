@@ -1,4 +1,5 @@
 import json
+import sys
 '''
 Post:
     param: list of ingredients
@@ -33,16 +34,18 @@ def getRecipes(ings):
         resultSet = set(resultSet).intersection(newSet)
     
     recipes = []
-    print("result set: ", len(resultSet))
+    #print("result set: ", len(resultSet))
     for id in resultSet:
         recipe = idToRecipe[id]
         recipes.append(recipe)
+
+        print(json.dumps(recipe))
     
     return recipes
 
 
 def main():
-    print(getRecipes(["asparagus", "onion", "salmon"]))
+    getRecipes(sys.argv[1:])
 
 if __name__ == "__main__":
     main()

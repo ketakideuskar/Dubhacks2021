@@ -36,8 +36,6 @@ with open('RAW_recipes.csv', mode='r') as csv_file:
             if key not in ingToId.keys():
                 ingToId[key] = []
             ingToId[key].append(row[1])
-        count += 1
-        print(count)
 
     with open('ingToId.txt', mode='w') as ingDump:
         ingDump.write(json.dumps(ingToId))
